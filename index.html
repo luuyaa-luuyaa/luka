@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to the website</h1>
+  <nav id="menu"></nav>
+  <section id="news-section"></section>
+
+  <script>
+    const menu = JSON.parse(localStorage.getItem("menu")) || [];
+    const menuDiv = document.getElementById("menu");
+    menu.forEach(item => {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.textContent = item;
+      menuDiv.appendChild(link);
+    });
+
+    const news = JSON.parse(localStorage.getItem("news")) || [];
+    const newsSection = document.getElementById("news-section");
+    news.forEach(n => {
+      const div = document.createElement("div");
+      div.innerHTML = `<h3>${n.title}</h3><p>${n.content}</p>`;
+      newsSection.appendChild(div);
+    });
+  </script>
+</body>
+</html>

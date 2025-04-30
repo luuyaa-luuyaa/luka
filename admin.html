@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <h2>Menu Management</h2>
+  <input type="text" id="menuItem" placeholder="New menu item">
+  <button onclick="addMenu()">Add Menu</button>
+
+  <h2>News Management</h2>
+  <input type="text" id="newsTitle" placeholder="News title"><br>
+  <textarea id="newsContent" placeholder="News content"></textarea><br>
+  <button onclick="addNews()">Add News</button>
+
+  <script>
+    function addMenu() {
+      const item = document.getElementById("menuItem").value;
+      if (item) {
+        const menu = JSON.parse(localStorage.getItem("menu")) || [];
+        menu.push(item);
+        localStorage.setItem("menu", JSON.stringify(menu));
+        alert("Menu added");
+        document.getElementById("menuItem").value = "";
+      }
+    }
+
+    function addNews() {
+      const title = document.getElementById("newsTitle").value;
+      const content = document.getElementById("newsContent").value;
+      if (title && content) {
+        const news = JSON.parse(localStorage.getItem("news")) || [];
+        news.push({ title, content });
+        localStorage.setItem("news", JSON.stringify(news));
+        alert("News added");
+        document.getElementById("newsTitle").value = "";
+        document.getElementById("newsContent").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
