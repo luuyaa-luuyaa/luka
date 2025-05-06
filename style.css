@@ -59,6 +59,12 @@ ul li {
   margin-bottom: 10px;
 }
 
+/* Ногоон өнгөтэй текст */
+p#name, p#email, p#phone, p#address, p#github {
+  color: #2e7d32; /* Ногоон өнгө */
+  font-weight: bold;
+}
+
 #personal-info {
   text-align: center;
 }
@@ -67,28 +73,6 @@ ul li {
   margin-top: 20px;
 }
 
-/* Responsive загвар */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-
-  section {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p, li {
-    font-size: 0.9rem;
-  }
-}
 /* Login хэсгийн загвар */
 #login-section {
   background-color: #ffffff;
@@ -131,15 +115,6 @@ ul li {
   background-color: #1565c0;
 }
 
-/* Background өнгө */
-body {
-  background-color: #e3f2fd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
 /* Админ хуудасны загвар */
 section {
   background-color: #ffffff;
@@ -156,7 +131,7 @@ section h2 {
   margin-bottom: 15px;
 }
 
-section input {
+section input, section textarea {
   width: 90%;
   padding: 10px;
   margin: 10px 0;
@@ -178,4 +153,35 @@ section button {
 
 section button:hover {
   background-color: #1565c0;
+}
+
+/* Responsive загвар */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  section input, section textarea {
+    font-size: 0.9rem;
+  }
+
+  section button {
+    font-size: 0.9rem;
+  }
 }

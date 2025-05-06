@@ -10,66 +10,70 @@
   
   <section id="personal-info">
     <h2>Хувийн мэдээлэл</h2>
-    <img src="https://scontent.fuln8-1.fna.fbcdn.net/v/t1.6435-9/105587307_1159867804369198_7751210023791034440_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=sUP9Q8KIsKwQ7kNvwHmNZTp&_nc_oc=AdkzjUOFbD3nFPqPQu2uwyeQCwXiC4audecApzSMzsW5nEaBgMblimi8TCMTHb-MiQU&_nc_zt=23&_nc_ht=scontent.fuln8-1.fna&_nc_gid=ehCLvRhnmtCKBC4Th7ilgQ&oh=00_AfLJYCBrbxEfibmwDkEvfzkueMgAjegRnO0lCwQfD6iAcQ&oe=68417748" alt="Хувийн зураг" id="profile-picture">
-    <p id="name">Нэр: Таны нэр</p>
-    <p id="email">И-мэйл: таныимэйл@хаяг.com</p>
-    <p id="phone">Утас: +1234567890</p>
-    <p id="address">Хаяг: Таны хаяг</p>
+    <img src="pro.jpg" alt="Хувийн зураг" id="">
+    <p id="name">Нэр: Барсболд Лувсанпэрэнлэй</p>
+    <p id="email">И-мэйл: luwsanperenleibarsbold@gmail.com</p>
+    <p id="phone">Утас: 99472464</p>
+    <p id="address">Байршил: Улаанбаатар, Монгол</p>
+    <p id="github">GitHub: <a href="https://github.com/luuyaa-luuyaa" target="_blank">github.com/luuyaa-luuyaa</a></p>
   </section>
-  <!-- Боловсролын хэсэг -->
+
   <section id="education">
     <h2>Боловсрол</h2>
     <ul id="education-list">
-      <li>Төрсөн жил: 2000</li>
-      <li>Их сургууль: Их Засаг Их Сургууль</li>
-      <li>Мэргэжил: Програмчлал</li>
+      <li>Их Засаг Их Сургууль</li>
+      <li>Програм хангамжийн бакалавр — 3-р курс (2022 – одоо)</li>
+      <li>Голч дүн: 3.75</li>
+      <li>Судалж буй хичээлүүд: Java, Python, PHP, Flutter, MySQL, HTML/CSS, JavaScript</li>
     </ul>
   </section>
 
-  <!-- Ажил мэргэжлийн хэсэг -->
   <section id="experience">
-    <h2>Ажил мэргэжил</h2>
+    <h2>Туршлага</h2>
     <ul id="experience-list">
-      <li>Программист, Компани: Программ Системс, 2023-2024</li>
-      <li>Системийн инженер, Компани: Систем Технолоджи, 2022-2023</li>
+      <li>
+        <strong>Вэб хөгжүүлэлтийн төсөл</strong> (2022-2025, сургуулийн бие даалтын төвшинд)
+        <ul>
+          <li>PHP, MySQL ашиглан 2-3 сэдвээр вэбсайт хийсэн</li>
+          <li>Admin/User эрхийн системтэй</li>
+          <li>UI хэсэгт Bootstrap ашигласан</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Хувийн Менежментийн Мобайл Апп</strong> (2023, сургалтын зориулалттай төслийн ажил)
+        <ul>
+          <li>Flutter ашиглан Android-д зориулсан мобайл апп хөгжүүлсэн</li>
+          <li>Орлого, зарлага бүртгэх, санхүүгийн дүн шинжилгээ хийх боломжтой</li>
+          <li>Өгөгдлийн сан ашиглан local хадгалалт хийсэн</li>
+        </ul>
+      </li>
     </ul>
   </section>
 
-  <!-- Төсөлүүд -->
-  <section id="projects">
-    <h2>Төсөлүүд</h2>
-    <ul id="project-list">
-      <li>Төсөл 1: Веб аппликейшн хөгжүүлэлт</li>
-      <li>Төсөл 2: Мобайл апп хөгжүүлэлт</li>
+  <section id="hobbies">
+    <h2>Сонирхол, хобби</h2>
+    <ul>
+      <li>Сагсан бөмбөг, волейбол тоглох</li>
+      <li>Вэб хөгжүүлэлт, шинэ технологи судлах</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Хэлний мэдлэг</h2>
+    <ul>
+      <li>Монгол хэл – Эх хэл</li>
+      <li>Англи хэл – Дунд түвшин (техникийн баримт ойлгох чадвартай)</li>
     </ul>
   </section>
 
   <script>
-    // LocalStorage-оос мэдээлэл унших
     const personalInfo = JSON.parse(localStorage.getItem("personalInfo"));
     if (personalInfo) {
       document.getElementById("name").textContent = `Нэр: ${personalInfo.name}`;
       document.getElementById("email").textContent = `И-мэйл: ${personalInfo.email}`;
       document.getElementById("phone").textContent = `Утас: ${personalInfo.phone}`;
-      document.getElementById("address").textContent = `Хаяг: ${personalInfo.address}`;
-    }
-
-    const education = JSON.parse(localStorage.getItem("education"));
-    if (education) {
-      const educationList = document.getElementById("education-list");
-      educationList.innerHTML = `<li>${education.education}</li>`;
-    }
-
-    const experience = JSON.parse(localStorage.getItem("experience"));
-    if (experience) {
-      const experienceList = document.getElementById("experience-list");
-      experienceList.innerHTML = `<li>${experience.experience}</li>`;
-    }
-
-    const projects = JSON.parse(localStorage.getItem("project"));
-    if (projects) {
-      const projectList = document.getElementById("project-list");
-      projectList.innerHTML = `<li>${projects.project}</li>`;
+      document.getElementById("address").textContent = `Байршил: ${personalInfo.address}`;
+      document.getElementById("profile-picture").src = personalInfo.image || "profile.jpg";
     }
   </script>
 </body>

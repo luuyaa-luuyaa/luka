@@ -9,35 +9,51 @@
 <body>
   <h1>Админ Тохиргоо</h1>
 
-  <!-- Хувийн мэдээлэл засах хэсэг -->
+  <!-- Хувийн мэдээлэл -->
   <section id="personal-info-section">
-    <h2>Хувийн Мэдээлэл Засах</h2>
-    <input type="text" id="name" placeholder="Нэр"><br>
-    <input type="email" id="email" placeholder="И-мэйл"><br>
-    <input type="text" id="phone" placeholder="Утас"><br>
-    <input type="text" id="address" placeholder="Хаяг"><br>
+    <h2>Хувийн Мэдээлэл</h2>
+    <p>Нэр: <input type="text" id="name" value="Лувсанпэрэнлэйн Барсболд"></p>
+    <p>И-мэйл: <input type="email" id="email" value="luwsanperenleibarsbold@gmail.com"></p>
+    <p>Утас: <input type="text" id="phone" value="99472464"></p>
+    <p>Байршил: <input type="text" id="address" value="Улаанбаатар, Монгол"></p>
+    <p>Зураг: <input type="file" id="profile-image" accept="image/*"></p>
     <button onclick="updatePersonalInfo()">Хадгалах</button>
   </section>
 
-  <!-- Боловсрол засах хэсэг -->
+  <!-- Боловсрол -->
   <section id="education-section">
-    <h2>Боловсрол Засах</h2>
-    <input type="text" id="education" placeholder="Боловсролын мэдээлэл"><br>
+    <h2>Боловсрол</h2>
+    <textarea id="education">Их Засаг Их Сургууль
+Програм хангамжийн бакалавр — 3-р курс (2022 – одоо)
+Голч дүн: 3.75
+Судалж буй хичээлүүд: Java, Python, PHP, Flutter, MySQL, HTML/CSS, JavaScript</textarea><br>
     <button onclick="updateEducation()">Хадгалах</button>
   </section>
 
-  <!-- Ажил мэргэжил засах хэсэг -->
+  <!-- Туршлага -->
   <section id="experience-section">
-    <h2>Ажил Мэргэжил Засах</h2>
-    <input type="text" id="experience" placeholder="Ажил мэргэжлийн мэдээлэл"><br>
+    <h2>Туршлага</h2>
+    <textarea id="experience">Вэб хөгжүүлэлтийн төсөл (2022-2025, сургуулийн бие даалтын төвшинд)
+PHP, MySQL ашиглан 2-3 сэдвээр вэбсайт хийсэн
+Admin/User эрхийн системтэй
+UI хэсэгт Bootstrap ашигласан</textarea><br>
     <button onclick="updateExperience()">Хадгалах</button>
   </section>
 
-  <!-- Төсөл засах хэсэг -->
-  <section id="projects-section">
-    <h2>Төсөл Засах</h2>
-    <input type="text" id="project" placeholder="Төслийн нэр"><br>
-    <button onclick="updateProject()">Хадгалах</button>
+  <!-- Сонирхол, хобби -->
+  <section id="hobbies-section">
+    <h2>Сонирхол, Хобби</h2>
+    <textarea id="hobbies">Сагсан бөмбөг, волейбол тоглох
+Вэб хөгжүүлэлт, шинэ технологи судлах</textarea><br>
+    <button onclick="updateHobbies()">Хадгалах</button>
+  </section>
+
+  <!-- Хэлний мэдлэг -->
+  <section id="languages-section">
+    <h2>Хэлний Мэдлэг</h2>
+    <textarea id="languages">Монгол хэл – Эх хэл
+Англи хэл – Дунд түвшин (техникийн баримт ойлгох чадвартай)</textarea><br>
+    <button onclick="updateLanguages()">Хадгалах</button>
   </section>
 
   <script>
@@ -48,6 +64,9 @@
         email: document.getElementById("email").value,
         phone: document.getElementById("phone").value,
         address: document.getElementById("address").value,
+        image: document.getElementById("profile-image").files[0]
+          ? URL.createObjectURL(document.getElementById("profile-image").files[0])
+          : null,
       };
       localStorage.setItem("personalInfo", JSON.stringify(personalInfo));
       alert("Хувийн мэдээлэл хадгалагдлаа!");
@@ -60,18 +79,25 @@
       alert("Боловсролын мэдээлэл хадгалагдлаа!");
     }
 
-    // Ажил мэргэжил хадгалах
+    // Туршлага хадгалах
     function updateExperience() {
       const experience = document.getElementById("experience").value;
       localStorage.setItem("experience", JSON.stringify({ experience }));
-      alert("Ажил мэргэжлийн мэдээлэл хадгалагдлаа!");
+      alert("Туршлагын мэдээлэл хадгалагдлаа!");
     }
 
-    // Төсөл хадгалах
-    function updateProject() {
-      const project = document.getElementById("project").value;
-      localStorage.setItem("project", JSON.stringify({ project }));
-      alert("Төслийн мэдээлэл хадгалагдлаа!");
+    // Сонирхол, хобби хадгалах
+    function updateHobbies() {
+      const hobbies = document.getElementById("hobbies").value;
+      localStorage.setItem("hobbies", JSON.stringify({ hobbies }));
+      alert("Сонирхол, хоббигийн мэдээлэл хадгалагдлаа!");
+    }
+
+    // Хэлний мэдлэг хадгалах
+    function updateLanguages() {
+      const languages = document.getElementById("languages").value;
+      localStorage.setItem("languages", JSON.stringify({ languages }));
+      alert("Хэлний мэдлэгийн мэдээлэл хадгалагдлаа!");
     }
   </script>
 </body>
