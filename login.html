@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mn">
 <head>
   <meta charset="UTF-8" />
-  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ Нэвтрэх</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Admin Login</h2>
-  <form onsubmit="return login()">
-    <input type="text" id="username" placeholder="Username" required><br>
-    <input type="password" id="password" placeholder="Password" required><br>
-    <button type="submit">Login</button>
-  </form>
+  <section id="login-section">
+    <h2>Админ Нэвтрэх</h2>
+    <form onsubmit="return login()">
+      <input type="text" id="username" placeholder="Хэрэглэгчийн нэр" required><br>
+      <input type="password" id="password" placeholder="Нууц үг" required><br>
+      <button type="submit">Нэвтрэх</button>
+    </form>
+  </section>
 
   <script>
     function login() {
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
+
+      // Хэрэглэгчийн нэр болон нууц үгийг шалгах
       if (user === "admin" && pass === "1234") {
+        // Хэрэглэгчийн нэр болон нууц үг зөв бол админ хуудас руу шилжих
         window.location.href = "admin.html";
       } else {
-        alert("Invalid credentials");
+        // Хэрэв зөв биш бол анхааруулга харуулах
+        alert("Мэдээлэл буруу байна");
       }
-      return false;
+      return false; // Формаг шалгахгүйгээр нэвтрэхийг зөвшөөрөх
     }
   </script>
 </body>
